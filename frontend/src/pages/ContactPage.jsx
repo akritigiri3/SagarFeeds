@@ -1,5 +1,6 @@
 import PageHero from "../components/PageHero.jsx";
 import { useState } from "react";
+import whatsappLogo from "../assets/whatsapp-logo.png";
 
 const contactItems = [
   ["Head Office", "Jabdi Marga, Pakali", "Itahari 56705, Koshi, Nepal"],
@@ -65,15 +66,15 @@ function ContactPage() {
     }
     if (title.toLowerCase().includes("whatsapp")) {
       return (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-          <path d="M20.52 3.48A11.94 11.94 0 0012 .04C6 0 1 5 1 11.02 1 14 2 16.6 4 18.7L3 22l3.4-1c2 1.1 4.5 1.5 6.6 1.5 6.02 0 11-5 11-11.02 0-3.17-1.24-6.12-3.48-8.99zM12 19.5c-1.9 0-3.8-.4-5.4-1.2L5 19l.8-1.6A8.98 8.98 0 013 11.02C3 6.6 7.01 3 12 3c2.2 0 4.2.8 5.7 2.3A8.9 8.9 0 0121 11.02C21 15.97 16.97 19.5 12 19.5z" fill="#145fe8" />
-        </svg>
+        <img src={whatsappLogo} alt="WhatsApp" width="20" height="20" />
       );
     }
     if (title.toLowerCase().includes("business") || title.toLowerCase().includes("hour")) {
       return (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-          <path d="M12 1a11 11 0 1011 11A11 11 0 0012 1zm1 12.59V6a1 1 0 10-2 0v7a1 1 0 00.29.71l4 4a1 1 0 001.42-1.42z" fill="#145fe8" />
+          <circle cx="12" cy="12" r="9" stroke="#145fe8" strokeWidth="2" />
+          <path d="M12 8.5V12.5L15.5 14.5" stroke="#145fe8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="12" cy="12" r="6.5" stroke="#145fe8" strokeWidth="1" opacity="0.3" />
         </svg>
       );
     }
@@ -101,12 +102,11 @@ function ContactPage() {
 
       <section className="page-wrap contact-form-section section-pad">
         <div className="contact-left">
-          <div className="contact-form-heading">
-            <h2>Send Us a Message</h2>
-            <p>Fill out the form below and our team will get back to you as soon as possible.</p>
-          </div>
-
           <form className="contact-form hover-card" onSubmit={handleSubmit}>
+            <div className="contact-form-heading">
+              <h2>Send Us a Message</h2>
+              <p>Fill out the form below and our team will get back to you as soon as possible.</p>
+            </div>
             <label style={{ gridColumn: "1 / -1" }}>
               Full Name
               <input
@@ -197,7 +197,7 @@ function ContactPage() {
         <aside className="contact-aside">
           <article className="hover-card" style={{ padding: 28 }}>
             <h3 style={{ color: "#fff", marginBottom: 12 }}>Visit Our Locations</h3>
-            <p style={{ marginTop: 12, color: "#fff" }}><strong>Regional Depots</strong></p>
+            <p style={{ marginTop: 12, color: "#fff" }}><span style={{ fontWeight: 400 }}>Regional Depots</span></p>
             <ul className="depot-list" style={{ marginTop: 12 }}>
               <li>Hile</li>
               <li>Bardibas</li>
@@ -212,11 +212,11 @@ function ContactPage() {
 
           <article className="hover-card" style={{ padding: 28, marginTop: 18 }}>
             <h3 style={{ color: "#1E5171", marginBottom: 12 }}>Why Contact Us?</h3>
-            <ul style={{ marginTop: 12, color: "#6B6363", listStyle: "none", paddingLeft: 0 }}>
-              <li style={{ marginBottom: 8 }}>● Product information and pricing</li>
-              <li style={{ marginBottom: 8 }}>● Dealer and partnership opportunities</li>
-              <li style={{ marginBottom: 8 }}>● Technical support and farmer training</li>
-              <li>● General inquiries and feedback</li>
+            <ul style={{ marginTop: 12, color: "#6B6363" }}>
+              <li style={{ marginBottom: 8 }}>Product information and pricing</li>
+              <li style={{ marginBottom: 8 }}>Dealer and partnership opportunities</li>
+              <li style={{ marginBottom: 8 }}>Technical support and farmer training</li>
+              <li>General inquiries and feedback</li>
             </ul>
           </article>
         </aside>
