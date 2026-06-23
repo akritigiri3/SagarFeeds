@@ -1,10 +1,14 @@
 import PageHero from "../components/PageHero.jsx";
+import fourCollabIcon from "../assets/Collaboration-Page/4+collaboration.png";
+import researchCollabIcon from "../assets/Collaboration-Page/research-collaboration.png";
+import qualityCollabIcon from "../assets/Collaboration-Page/quality-collaboration.png";
+import govtCollabIcon from "../assets/Collaboration-Page/govt-collaboration.png";
 
 const partnershipStats = [
-  ["4+", "Key Partnerships"],
-  ["Research", "Innovation Focus"],
-  ["Quality", "Commitment"],
-  ["Govt.", "Support"],
+  ["4+", "Key Partnerships", fourCollabIcon],
+  ["Research", "Innovation Focus", researchCollabIcon],
+  ["Quality", "Commitment", qualityCollabIcon],
+  ["Govt.", "Support", govtCollabIcon],
 ];
 
 const impact = [
@@ -15,7 +19,7 @@ const impact = [
 
 function CollaborationPage() {
   return (
-    <>
+    <div className="collab-page">
       <PageHero
         title="Institutional Collaborations"
         subtitle="Partnering with leading institutions to drive innovation and sustainability in agriculture"
@@ -34,9 +38,9 @@ function CollaborationPage() {
           </p>
         </div>
         <div className="mini-grid">
-          {partnershipStats.map(([value, label]) => (
+          {partnershipStats.map(([value, label, icon]) => (
             <article className="hover-card" key={label}>
-              <span className="soft-icon">+</span>
+              <img className="soft-icon" src={icon} alt="" aria-hidden="true" />
               <strong>{value}</strong>
               <span>{label}</span>
             </article>
@@ -73,7 +77,7 @@ function CollaborationPage() {
           sector and supporting the nation's food security goals.
         </p>
       </section>
-    </>
+    </div>
   );
 }
 

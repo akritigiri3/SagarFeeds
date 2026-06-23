@@ -24,7 +24,7 @@ function HomePage() {
       </section>
 
       <section className="page-wrap stats-row section-pad">
-        {stats.map(([value, label]) => <StatCard key={label} value={value} label={label} />)}
+        {stats.map(([value, label, icon]) => <StatCard key={label} value={value} label={label} icon={icon} />)}
       </section>
 
       <section className="page-wrap split section-pad">
@@ -48,9 +48,9 @@ function HomePage() {
         <h2>Why Choose Sagar Feed</h2>
         <p>We combine quality production, technical expertise, and a deep understanding of Nepal's agricultural landscape.</p>
         <div className="feature-grid">
-          {whyChoose.map(([title, text]) => (
+          {whyChoose.map(([title, text, icon]) => (
             <article className="feature-card hover-card" key={title}>
-              <span className="line-icon" aria-hidden="true">/</span>
+              <img className="line-icon" src={icon || assets.lineIcon} alt="" aria-hidden="true" />
               <h3>{title}</h3>
               <p>{text}</p>
             </article>
