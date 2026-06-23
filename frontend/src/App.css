@@ -306,11 +306,11 @@ p {
 }
 
 .line-icon {
-  color: #777777;
-  font-size: 34px;
-  line-height: 1;
+  display: inline-block;
+  width: 44px;
+  height: 44px;
   margin-bottom: 8px;
-  transform: rotate(-30deg);
+  object-fit: contain;
 }
 
 .split {
@@ -449,9 +449,23 @@ p {
   display: inline-flex;
   font-size: 22px;
   font-weight: 800;
-  height: 46px;
+  height: 56px;
   justify-content: center;
-  width: 46px;
+  width: 56px;
+}
+
+.mission-icon {
+  display: inline-block;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 18px;
+  object-fit: contain;
+}
+
+/* Collaboration page: increase breadth (width) of icons only, keep height unchanged */
+.collab-page .soft-icon {
+  width: 64px; /* reduced overall size */
+  height: 48px; /* set explicit height to reduce overall footprint */
 }
 
 .large-line-icon {
@@ -734,6 +748,18 @@ p {
   margin-top: 30px;
 }
 
+.support-list .support-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.subsidy-card .support-icon {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+}
+
 .support-list h3 {
   font-size: 18px;
   margin-bottom: 12px;
@@ -782,6 +808,61 @@ p {
   margin: 0;
 }
 
+.service-grid {
+  margin: 60px auto 0;
+  max-width: 1200px;
+}
+
+.support-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.support-card {
+  padding: 32px 28px;
+  display: grid;
+  gap: 18px;
+  border-radius: 24px;
+}
+
+.support-card-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.location-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.social-initiative-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 36px;
+}
+
+.initiative-card {
+  padding: 28px;
+  display: grid;
+  gap: 18px;
+  border-radius: 24px;
+}
+
+.initiative-icon {
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  background: rgba(15, 90, 177, 0.08);
+  border-radius: 16px;
+  display: inline-flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
 .subsidy-card {
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -791,6 +872,90 @@ p {
 
 .subsidy-card h2 {
   margin: 22px 0;
+}
+
+.social-initiative-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 36px;
+}
+
+.initiative-card {
+  padding: 28px;
+  display: grid;
+  gap: 16px;
+  border-radius: 24px;
+}
+
+.initiative-tag {
+  display: inline-flex;
+  background: rgba(30, 81, 113, 0.1);
+  border-radius: 999px;
+  color: #1E5171;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  width: fit-content;
+}
+
+.social-impact-section {
+  margin-top: 48px;
+}
+
+.impact-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.impact-card {
+  padding: 28px;
+  display: grid;
+  gap: 16px;
+  border-radius: 24px;
+}
+
+.impact-highlight {
+  background: rgba(236, 32, 39, 0.16);
+  border-radius: 24px;
+  padding: 28px 24px;
+  width: min(88%, 460px);
+  justify-self: end;
+}
+
+.impact-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.impact-card li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.impact-card li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d51f30;
+}
+
+.initiative-icon {
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  background: rgba(15, 90, 177, 0.08);
+  border-radius: 16px;
+  display: inline-flex;
+  justify-content: center;
+  font-size: 24px;
 }
 
 .mini-grid {

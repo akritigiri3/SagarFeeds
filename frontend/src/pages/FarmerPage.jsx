@@ -1,10 +1,14 @@
 import PageHero from "../components/PageHero.jsx";
 import { assets } from "../content.js";
+import every15DaysIcon from "../assets/Farmer-Page/Every-15-Days.png";
+import expertLedIcon from "../assets/About-Us/155+About.png";
+import practicalKnowledgeIcon from "../assets/About-Us/320+dealer-About.png";
+import subsidiesSupportIcon from "../assets/Farmer-Page/Agriculture-Subsidies-Support.png";
 
 const programs = [
-  ["Every 15 Days", "Orientation programs are conducted regularly across different regions to ensure continuous learning and support."],
-  ["Expert-Led Sessions", "All programs are led by experienced veterinarians and technical experts with deep industry knowledge."],
-  ["Practical Knowledge", "Focus on modern livestock management practices that can be immediately applied on farms."],
+  ["Every 15 Days", "Orientation programs are conducted regularly across different regions to ensure continuous learning and support.", every15DaysIcon],
+  ["Expert-Led Sessions", "All programs are led by experienced veterinarians and technical experts with deep industry knowledge.", expertLedIcon],
+  ["Practical Knowledge", "Focus on modern livestock management practices that can be immediately applied on farms.", practicalKnowledgeIcon],
 ];
 
 const benefits = [
@@ -33,9 +37,9 @@ function FarmerPage() {
       <section className="page-wrap split section-pad support-list">
         <div>
           <h2>Regular Training Programs</h2>
-          {programs.map(([title, text]) => (
+          {programs.map(([title, text, icon]) => (
             <article key={title}>
-              <span className="soft-icon">+</span>
+              <img className="support-icon" src={icon} alt="" aria-hidden="true" />
               <div>
                 <h3>{title}</h3>
                 <p>{text}</p>
@@ -62,7 +66,7 @@ function FarmerPage() {
       </section>
 
       <section className="page-wrap section-pad centered subsidy-card hover-card">
-        <span className="soft-icon">+</span>
+        <img className="support-icon" src={subsidiesSupportIcon} alt="" aria-hidden="true" />
         <h2>Agricultural Subsidies Support</h2>
         <p>
           We assist farmers in understanding and accessing available government subsidies and agricultural

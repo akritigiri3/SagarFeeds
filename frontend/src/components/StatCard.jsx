@@ -1,7 +1,9 @@
-function StatCard({ value, label }) {
+import lineIcon from "../assets/100-ton-home.png";
+
+function StatCard({ value, label, icon }) {
   return (
     <article className="stat-card hover-card">
-      <span className="line-icon" aria-hidden="true">/</span>
+      <img className="line-icon" src={icon || lineIcon} alt="" aria-hidden="true" />
       <strong>{value}</strong>
       <span>{label}</span>
     </article>

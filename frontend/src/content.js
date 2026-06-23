@@ -8,12 +8,27 @@ import pigFeed from "./assets/product-pig.png";
 import fishFeed from "./assets/product-fish.png";
 import duckFeed from "./assets/product-duck.png";
 import cattleFeed from "./assets/product-cattle.png";
+import lineIcon from "./assets/100-ton-home.png";
+import dealerHomeIcon from "./assets/320+dealer-home.png";
+import locationIcon from "./assets/location-icon.png";
+import farmerNetworkHome from "./assets/farmer-network-home.png";
+import socialResponsibilityHome from "./assets/Social-Responsibility-home.png";
+import hundredTonAbout from "./assets/About-Us/100-ton-About.png";
+import dealerAbout from "./assets/About-Us/320+dealer-About.png";
+import thirtyAbout from "./assets/About-Us/30+About.png";
+import oneFiftyFiveAbout from "./assets/About-Us/155+About.png";
 
 export const assets = {
   logo,
   heroPoultry,
   aboutCollage,
   farmStory,
+  lineIcon,
+  dealerHomeIcon,
+  locationIcon,
+  farmerNetworkHome,
+  socialResponsibilityHome,
+  dealerAbout,
 };
 
 export const navLinks = [
@@ -36,22 +51,25 @@ export const quickLinks = [
 
 export const stats = [
   ["100 Tons", "Daily Production"],
-  ["320 +", "Dealers"],
-  ["1500 +", "Sub-dealers"],
-  ["2200 +", "Farmer Networks"],
+  ["320 +", "Dealers", dealerHomeIcon],
+  ["1500 +", "Sub-dealers", locationIcon],
+  ["2200 +", "Farmer Networks", farmerNetworkHome],
 ];
 
 export const achievements = [
-  ...stats,
-  ["30+", "Direct Staff"],
-  ["155 +", "Employment Opportunities"],
+  ["100 Tons", "Daily Production", hundredTonAbout],
+  ["320 +", "Dealers", dealerAbout],
+  ["1500 +", "Sub-dealers", dealerAbout],
+  ["2200 +", "Farmer Networks", dealerAbout],
+  ["30+", "Direct Staff", thirtyAbout],
+  ["155 +", "Employment Opportunities", oneFiftyFiveAbout],
 ];
 
 export const whyChoose = [
   ["Quality-Focused Production", "Scientifically balanced formulations using carefully selected raw materials for optimal nutrition."],
-  ["Nationwide Distribution", "Extensive network of dealers and regional depots ensuring accessibility across Nepal."],
-  ["Technical Support", "Regular training and field visits by veterinarians and technical experts."],
-  ["Social Responsibility", "Active participation in community development and agricultural support programs."],
+  ["Nationwide Distribution", "Extensive network of dealers and regional depots ensuring accessibility across Nepal.", locationIcon],
+  ["Technical Support", "Regular training and field visits by veterinarians and technical experts.", dealerHomeIcon],
+  ["Social Responsibility", "Active participation in community development and agricultural support programs.", socialResponsibilityHome],
 ];
 
 export const products = [

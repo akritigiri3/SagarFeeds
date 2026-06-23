@@ -1,6 +1,6 @@
 import PageHero from "../components/PageHero.jsx";
 import StatCard from "../components/StatCard.jsx";
-import { locations } from "../content.js";
+import { locations, assets } from "../content.js";
 
 function NetworkPage() {
   return (
@@ -14,9 +14,9 @@ function NetworkPage() {
         <h2>Our Reach</h2>
         <p>Sagar Feed has developed an extensive distribution network across Nepal.</p>
         <div className="achievement-grid reach-grid">
-          <StatCard value="320+" label="Dealers" />
-          <StatCard value="1500+" label="Sub-dealers" />
-          <StatCard value="2200+" label="Farmer Networks" />
+          <StatCard value="320+" label="Dealers" icon={assets.dealerAbout} />
+          <StatCard value="1500+" label="Sub-dealers" icon={assets.dealerAbout} />
+          <StatCard value="2200+" label="Farmer Networks" icon={assets.dealerAbout} />
         </div>
       </section>
 
@@ -26,7 +26,7 @@ function NetworkPage() {
         <div className="location-grid">
           {locations.map((location) => (
             <article className="hover-card" key={location}>
-              <span>+</span>
+              <img className="location-icon" src={assets.locationIcon} alt="" aria-hidden="true" />
               {location}
             </article>
           ))}
