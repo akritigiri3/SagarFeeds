@@ -607,7 +607,7 @@ p {
 
 .product-card li::before,
 .network-copy li::before {
-  color: #16905e;
+  color: #ffffff;
   content: "✓";
   font-weight: 800;
   margin-right: 8px;
