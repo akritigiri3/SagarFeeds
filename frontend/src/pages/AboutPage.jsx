@@ -41,6 +41,16 @@ function AboutPage() {
         </article>
       </section>
 
+      <section className="page-wrap section-pad">
+        <div className="founder-message-card">
+          <h3>Founder Message</h3>
+          <p>
+            “At Sagar Feed, our foundation is built on the unwavering belief that the prosperity of our nation is directly linked to the success of our farmers. Since 2065 B.S., we have dedicated ourselves to not just manufacturing feed, but delivering complete nutritional solutions that guarantee health, yield, and profitability. Our journey is fueled by innovation, driven by quality, and dedicated to the hardworking agricultural community of Nepal.”
+          </p>
+          <strong>Gyanendra Parajuli</strong>
+        </div>
+      </section>
+
       <section className="page-wrap section-pad centered">
         <h2>Our Achievements</h2>
         <p>Building a strong foundation for Nepal's agricultural future</p>
