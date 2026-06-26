@@ -196,17 +196,17 @@ function ContactPage() {
 
         <aside className="contact-aside">
           <article className="hover-card" style={{ padding: 28 }}>
-            <h3 style={{ color: "#fff", marginBottom: 12 }}>Visit Our Locations</h3>
-            <p style={{ marginTop: 12, color: "#fff" }}><span style={{ fontWeight: 400 }}>Regional Depots</span></p>
+            <h3 style={{ color: "#1E5171", marginBottom: 12 }}>Visit Our Locations</h3>
+            <p style={{ marginTop: 12, color: "#6B6363" }}><span style={{ fontWeight: 400 }}>Regional Depots</span></p>
             <ul className="depot-list" style={{ marginTop: 12 }}>
-              <li>Hile</li>
-              <li>Bardibas</li>
-              <li>Duhabi</li>
-              <li>Lahan</li>
-              <li>Janakpur</li>
-              <li>Katari</li>
-              <li>Beltar</li>
-              <li>Sankhuwasabha</li>
+              <li style={{color: "#6B6363"}}>Hile</li>
+              <li style={{color: "#6B6363"}}>Bardibas</li>
+              <li style={{color: "#6B6363"}}>Duhabi</li>
+              <li style={{color: "#6B6363"}}>Lahan</li>
+              <li style={{color: "#6B6363"}}>Janakpur</li>
+              <li style={{color: "#6B6363"}}>Katari</li>
+              <li style={{color: "#6B6363"}}>Beltar</li>
+              <li style={{color: "#6B6363"}}>Sankhuwasabha</li>
             </ul>
           </article>
 

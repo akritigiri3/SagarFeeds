@@ -1,4 +1,11 @@
 import PageHero from "../components/PageHero.jsx";
+import beyondBusinessIcon from "../assets/Social-Responsibility/BeyondBusiness-Social.png";
+import bloodDonationProgramsIcon from "../assets/Social-Responsibility/BloodDonationPrograms.png";
+import lionsClubActivitiesIcon from "../assets/Social-Responsibility/LionsClubActivities.png";
+import regionalDepotEstablishmentIcon from "../assets/Social-Responsibility/RegionalDepotEstablishment.png";
+import communityDevelopmentIcon from "../assets/Social-Responsibility/CommunityDevelopment.png";
+import bloodDonationDrivesIcon from "../assets/Social-Responsibility/BloodDonationDrives.png";
+import lionsClubPartnershipIcon from "../assets/Social-Responsibility/LionsClubPartnership.png";
 
 const commitments = [
   ["Economic Development", "Creating jobs and supporting rural economies through our network."],
@@ -7,10 +14,10 @@ const commitments = [
 ];
 
 const initiatives = [
-  ["Blood Donation Programs", "Regularly organizing blood donation camps to support community health and save lives across Nepal.", "Multiple camps organized annually"],
-  ["Lions Club Activities", "Active participation in Lions Club initiatives focused on community development and social welfare.", "Ongoing partnership"],
-  ["Regional Depot Establishment", "Setting up regional depots to improve accessibility and support rural economic development.", "8+ strategic locations"],
-  ["Community Development", "Supporting local communities through various development programs and initiatives.", "Year-round engagement"],
+  ["Blood Donation Programs", "Regularly organizing blood donation camps to support community health and save lives across Nepal.", "Multiple camps organized annually", bloodDonationProgramsIcon],
+  ["Lions Club Activities", "Active participation in Lions Club initiatives focused on community development and social welfare.", "Ongoing partnership", lionsClubActivitiesIcon],
+  ["Regional Depot Establishment", "Setting up regional depots to improve accessibility and support rural economic development.", "8+ strategic locations", regionalDepotEstablishmentIcon],
+  ["Community Development", "Supporting local communities through various development programs and initiatives.", "Year-round engagement", communityDevelopmentIcon],
 ];
 
 function SocialResponsibilityPage() {
@@ -22,8 +29,10 @@ function SocialResponsibilityPage() {
       />
 
       <section className="page-wrap section-pad centered compact-section">
-        <span className="large-line-icon">+</span>
-        <h2>Beyond Business</h2>
+        <div className="social-title-stack social-title-center">
+          <img className="social-title-icon" src={beyondBusinessIcon} alt="" aria-hidden="true" />
+          <h2>Beyond Business</h2>
+        </div>
         <p>
           We are committed to giving back to the community and supporting social well-being.
           Our efforts go beyond business as we strive to make a positive social impact throughout Nepal.
@@ -32,9 +41,12 @@ function SocialResponsibilityPage() {
 
       <section className="page-wrap section-pad">
         <div className="social-initiative-grid">
-          {initiatives.map(([title, text, badge]) => (
+          {initiatives.map(([title, text, badge, icon]) => (
             <article className="hover-card initiative-card" key={title}>
-              <h3>{title}</h3>
+              <div className="social-title-row">
+                <img className="social-title-icon" src={icon} alt="" aria-hidden="true" />
+                <h3>{title}</h3>
+              </div>
               <p>{text}</p>
               <span className="initiative-tag">{badge}</span>
             </article>
@@ -45,8 +57,10 @@ function SocialResponsibilityPage() {
       <section className="page-wrap section-pad social-impact-section">
         <div className="impact-grid">
           <article className="hover-card impact-card">
-            <span className="initiative-icon">💧</span>
-            <h3>Blood Donation Drives</h3>
+            <div className="social-title-row">
+              <img className="social-title-icon" src={bloodDonationDrivesIcon} alt="" aria-hidden="true" />
+              <h3>Blood Donation Drives</h3>
+            </div>
             <p>We organize regular blood donation programs as part of our commitment to community health and emergency preparedness. These initiatives help ensure blood availability for hospitals and medical facilities across the region.</p>
           </article>
           <article className="hover-card impact-card impact-highlight">
@@ -59,8 +73,10 @@ function SocialResponsibilityPage() {
             </ul>
           </article>
           <article className="hover-card impact-card">
-            <span className="initiative-icon">🤝</span>
-            <h3>Lions Club Partnership</h3>
+            <div className="social-title-row">
+              <img className="social-title-icon" src={lionsClubPartnershipIcon} alt="" aria-hidden="true" />
+              <h3>Lions Club Partnership</h3>
+            </div>
             <p>Our active participation in Lions Club initiatives reflects our commitment to organized community service and social development. Through this partnership, we contribute to various humanitarian projects and community welfare programs.</p>
           </article>
           <article className="hover-card impact-card impact-highlight">

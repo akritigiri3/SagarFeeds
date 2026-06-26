@@ -54,6 +54,7 @@ h1,
 h2,
 h3 {
   color: var(--ink);
+  font-weight: 700;
   line-height: 1.12;
 }
 
@@ -83,7 +84,7 @@ p {
 .centered > h2,
 .split h2 {
   font-size: 25px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -123,7 +124,7 @@ p {
 .site-header nav a {
   color: var(--ink);
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
   position: relative;
   transition: color 180ms ease, transform 180ms ease;
 }
@@ -191,7 +192,7 @@ p {
 .hero-content h1 {
   color: var(--white);
   font-size: clamp(42px, 6vw, 62px);
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 22px;
   max-width: 820px;
 }
@@ -199,7 +200,7 @@ p {
 .hero-content h2 {
   color: var(--white);
   font-size: clamp(24px, 3vw, 34px);
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 18px;
   max-width: 820px;
 }
@@ -395,7 +396,7 @@ p {
 .dark-band h2 {
   color: var(--white);
   font-size: 30px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .cta-band p,
@@ -430,6 +431,32 @@ p {
   border-radius: 28px;
   min-height: 224px;
   padding: 34px 40px;
+}
+
+.founder-message-card {
+  background: #BFD5E3;
+  border-radius: 24px;
+  padding: 34px 40px;
+}
+
+.founder-message-card h3 {
+  color: #1e5171;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.founder-message-card p {
+  color: #6b6363;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.founder-message-card strong {
+  color: #1e5171;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .mission-grid h3 {
@@ -607,7 +634,7 @@ p {
 
 .product-card li::before,
 .network-copy li::before {
-  color: #ffffff;
+  color: var(--white);
   content: "✓";
   font-weight: 800;
   margin-right: 8px;
@@ -633,7 +660,7 @@ p {
   color: var(--ink);
   display: flex;
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 600;
   gap: 30px;
   min-height: 70px;
   padding: 20px 22px;
@@ -653,15 +680,15 @@ p {
 }
 
 .contact-aside article:first-child {
-  background: rgba(30, 81, 113, 0.4) !important;
-  color: var(--white);
+  background: rgba(30, 81, 113, 0.05) !important;
+  color: var(--ink);
   border-radius: 14px !important;
 }
 
 .contact-aside article:first-child h3,
 .contact-aside article:first-child strong,
 .contact-aside article:first-child li {
-  color: var(--white);
+  color: var(--ink);
 }
 
 .contact-aside article:first-child .depot-list {
@@ -678,6 +705,7 @@ p {
 }
 
 .contact-aside article:nth-child(2) {
+  background: rgba(30, 81, 113, 0.05) !important;
   border-radius: 14px !important;
 }
 
@@ -897,6 +925,31 @@ p {
   font-weight: 600;
   padding: 8px 14px;
   width: fit-content;
+}
+
+.social-title-row {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.social-title-stack {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-title-center {
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.social-title-icon {
+  flex-shrink: 0;
+  height: 46px;
+  object-fit: contain;
+  width: 46px;
 }
 
 .social-impact-section {
