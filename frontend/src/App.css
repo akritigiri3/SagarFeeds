@@ -121,6 +121,23 @@ p {
   gap: 32px;
 }
 
+/* Auth nav placed on the right side */
+.site-header .auth-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.site-header .auth-nav a {
+  color: #1E5171;
+  font-weight: 700;
+}
+
+.site-header .auth-nav a:hover {
+  color: #154056;
+}
+
 .site-header nav a {
   color: var(--ink);
   font-size: 16px;
@@ -248,6 +265,90 @@ p {
 .button-outline {
   background: transparent;
   color: var(--white);
+}
+
+/* Auth pages reuse hero background and provide a right-side card */
+.auth-hero::after {
+  background: rgba(31, 86, 110, 0.85);
+}
+
+.auth-page {
+  display: grid;
+  grid-template-columns: 1fr minmax(360px, 460px);
+  gap: 40px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.auth-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: var(--hover-shadow);
+}
+
+.auth-card h2 {
+  color: #1E5171;
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.auth-card .muted {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+/* Form spacing and inputs similar to contact form */
+.auth-form { display: grid; gap: 18px; }
+.auth-form label { color: #6B6363; display: grid; gap: 8px; font-size: 15px; font-weight: 400; }
+.auth-form input, .auth-form textarea, .auth-form select { background: #ffffff; border: 1px solid #d9d9d9; border-radius: 8px; color: #6B6363; font: inherit; font-size: 15px; min-height: 46px; padding: 12px 14px; transition: border-color 180ms ease, box-shadow 180ms ease; }
+.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:12px }
+.auth-form label.checkbox-row{ display:flex; align-items:center; gap:12px; color:#6B6363; align-items:center }
+.auth-form label.checkbox-row input{ width:18px; height:18px }
+
+.auth-alt{ margin-top:12px; text-align:center }
+.auth-alt a{ color:#1E5171; font-weight:700 }
+
+/* New auth layout (split screen) */
+.auth-layout {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  min-height: calc(100vh - 78px);
+}
+
+.auth-left {
+  padding: 72px 60px;
+  background: linear-gradient(110deg, var(--blue), var(--blue-soft));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+}
+
+.auth-left-inner { max-width: 520px; }
+.auth-left .brand-small { font-weight:800; margin-bottom:28px; opacity:0.95 }
+.auth-left h1 { font-size: clamp(28px,4.5vw,42px); line-height:1.05; margin-bottom:18px; color:var(--white) }
+.auth-left p { color: rgba(255,255,255,0.9); font-size:18px; margin-bottom:22px }
+.auth-left .feature-list { margin-top:14px; list-style:none; padding:0; color:rgba(255,255,255,0.95); }
+.auth-left .feature-list li{ margin-bottom:12px }
+
+.auth-right { display:flex; align-items:center; justify-content:center; padding:48px 28px }
+
+.auth-card { width:100%; max-width:480px; border-radius:14px; padding:36px; box-shadow:var(--hover-shadow); background:var(--white) }
+.register-page .auth-card { max-width:640px; padding:40px 44px }
+.auth-card h2 { color:#1E5171; margin-bottom:6px }
+
+/* Center-only auth pages */
+.auth-only { display:flex; align-items:center; justify-content:center; min-height: calc(100vh - 78px); padding: 40px; background: #f7f9fb }
+.auth-card-container { width:100%; max-width:520px }
+
+/* Button adjustments: taller rounded rectangle */
+.form-button { background: #1E5171; border-color: #1E5171; color: var(--white); cursor: pointer; justify-self: stretch; width: 100%; min-width: unset; transition: background 180ms ease, opacity 180ms ease; min-height: 54px; padding: 14px 20px; border-radius: 12px; font-size: 18px; font-weight: 700 }
+.form-button:hover:not(:disabled) { background: #154056 }
+
+@media (max-width: 900px) {
+  .auth-layout { grid-template-columns: 1fr; }
+  .auth-left { padding:48px; }
+  .auth-right { padding:28px }
 }
 
 .stats-row {

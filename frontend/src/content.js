@@ -37,6 +37,8 @@ export const navLinks = [
   ["Products", "/products"],
   ["Network", "/network"],
   ["Contact", "/contact"],
+  ["Sign In", "/login"],
+  ["Register", "/register"],
 ];
 
 export const quickLinks = [

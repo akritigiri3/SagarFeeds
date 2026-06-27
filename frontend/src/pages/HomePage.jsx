@@ -17,7 +17,7 @@ function HomePage() {
             dedicated to delivering high-quality feed solutions for the livestock and poultry industry.
           </p>
           <div className="hero-actions">
-            <Link className="button button-primary" to="/products">View Products <span>{"->"}</span></Link>
+            <Link className="button button-primary" to="/products">View Products →</Link>
             <Link className="button button-outline" to="/contact">Contact Us</Link>
           </div>
         </div>
@@ -39,7 +39,7 @@ function HomePage() {
             We believe that strong agriculture is the backbone of a strong nation and we are proud
             to contribute to Nepal's agricultural growth and rural development.
           </p>
-          <Link className="text-link" to="/about">Learn More About Us <span>{"->"}</span></Link>
+          <Link className="text-link" to="/about">Learn More About Us →</Link>
         </div>
         <img className="image-grid" src={assets.aboutCollage} alt="Livestock and poultry collage" />
       </section>
@@ -63,7 +63,7 @@ function HomePage() {
           <h2>Ready to Grow Your Livestock Business?</h2>
           <p>Join thousands of farmers who trust Sagar Feed for quality nutrition solutions.</p>
           <div className="hero-actions centered-actions">
-            <Link className="button button-primary" to="/products">Explore Our Products <span>{"->"}</span></Link>
+            <Link className="button button-primary" to="/products">Explore Our Products →</Link>
             <Link className="button button-outline" to="/contact">Get in Touch</Link>
           </div>
         </div>
