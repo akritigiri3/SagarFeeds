@@ -1,3 +1,4 @@
+import api from "../api.js";
 import PageHero from "../components/PageHero.jsx";
 import { useState } from "react";
 import whatsappLogo from "../assets/whatsapp-logo.png";
@@ -40,13 +41,19 @@ function ContactPage() {
     );
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (isFormValid()) {
-      console.log("Form submitted:", formData);
-      // Handle form submission
-    }
-  };
+ const handleSubmit = async (event) => {
+  event.preventDefault();
+  if (!isFormValid()) return;
+
+  try {
+    await api.post("/contact", formData);
+    alert("Message sent successfully!");
+    setFormData({ name: "", email: "", phone: "", category: "", subject: "", message: "" });
+  } catch (err) {
+    console.error(err);
+    alert(err.response?.data?.message || "Something went wrong. Please try again.");
+  }
+};
 
   const renderIcon = (title) => {
     if (title.toLowerCase().includes("head")) {
