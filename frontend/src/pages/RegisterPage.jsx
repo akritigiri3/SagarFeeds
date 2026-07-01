@@ -1,6 +1,46 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import api from "../api.js";
 
 function RegisterPage() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    role: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const [agreed, setAgreed] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!agreed) {
+      alert("Please agree to the Terms of Service and Privacy Policy.");
+      return;
+    }
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    try {
+      await api.post("/auth/register", formData);
+      alert("Account created successfully!");
+      navigate("/login");
+    } catch (err) {
+      console.error(err);
+      alert(err.response?.data?.message || "Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <main className="auth-only register-page">
       <div className="auth-card-container">
@@ -8,44 +48,83 @@ function RegisterPage() {
           <h2>Create an account</h2>
           <p className="muted">Join the Sagar Feed dealer & farmer network</p>
 
-          <form className="auth-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="auth-form" onSubmit={handleSubmit}>
             <label>
               <b>Full Name</b>
-              <input type="text" placeholder="Your full name" />
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Your full name"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+              />
             </label>
 
             <div className="two-col">
               <label>
                 <b>Email</b>
-                <input type="email" placeholder="you@example.com" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
               </label>
               <label>
                 <b>Phone</b>
-                <input type="tel" placeholder="+977-XXX-XXXX" />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="+977-XXX-XXXX"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
               </label>
             </div>
 
             <label>
               <b>I am a</b>
-              <select>
-                <option>Select your role</option>
-                <option>Dealer</option>
-                <option>Farmer</option>
+              <select name="role" value={formData.role} onChange={handleChange} required>
+                <option value="">Select your role</option>
+                <option value="Dealer">Dealer</option>
+                <option value="Farmer">Farmer</option>
               </select>
             </label>
 
             <label>
               <b>Password</b>
-              <input type="password" placeholder="Create a strong password" />
+              <input
+                type="password"
+                name="password"
+                placeholder="Create a strong password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
             </label>
 
             <label>
               <b>Confirm Password</b>
-              <input type="password" placeholder="Repeat your password" />
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Repeat your password"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+              />
             </label>
 
             <label className="checkbox-row">
-              <input type="checkbox" /> I agree to the Terms of Service and Privacy Policy
+              <input
+                type="checkbox"
+                checked={agreed}
+                onChange={(e) => setAgreed(e.target.checked)}
+              />{" "}
+              I agree to the Terms of Service and Privacy Policy
             </label>
 
             <button className="form-button">Create Account →</button>
